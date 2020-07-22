@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-
-const img = styled.image`
-    height: 40vmin;
-    pointer-events: none;
-`;
-
 const Header = styled.header`
     background-color: #3a4d74;
     min-height: 20vh;

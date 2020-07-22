@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'
 
 const Section = styled.section`
-background-color: #3a4d74;
+    background-color: #3a4d74;
     font-size: 2rem;
     text-align: left;
 `;

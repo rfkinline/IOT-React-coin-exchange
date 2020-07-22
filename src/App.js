@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components'
 import CoinList from './components/CoinList/CoinList';
 import ExchangeHeader from './components/ExchangeHeader/ExchangeHeader';
-import AccountBalance from './components/AccountBalance/AccountBalance'
+import AccountBalance from './components/AccountBalance/AccountBalance';
 
-const div = styled.div`
+const Div = styled.div`
   text-align: center;
-  background-color: #3a4d74;
-  background-color: darkblue;
-  color: #cccccc
-`;
+  background-color: #553d74;
+  `;
 
 class App extends React.Component {
   constructor (props) {
@@ -23,15 +21,31 @@ class App extends React.Component {
         { name: 'Ripple', ticker: 'XRP', price: 0.20 },
       ]
     }
+    this.handleRefresh = this.handleRefresh.bind(this);
+  }
+  handleRefresh(valueChangeTicker){
+    const newCoinData = this.state.coinData.map(function({ticker, name, price}) {
+      let newPrice = price;
+      if (valueChangeTicker === ticker) {
+        const randomPercentage = 0.995 + Math.random() * 0.01;
+        newPrice = newPrice * randomPercentage;
 
+      }
+      return{
+        ticker, name, price: newPrice
+      }
+
+    });
+    // console.log(coin);
+    this.setState({coinData: newCoinData})
   }
   render() {
     return (
-      <div>
+      <Div>
         <ExchangeHeader />
         <AccountBalance amount={this.state.balance} />
-        <CoinList coinData={this.state.coinData} />
-      </div>
+        <CoinList coinData={this.state.coinData} handleRefresh = {this.handleRefresh}/>
+      </Div>
     );
   }
 }
