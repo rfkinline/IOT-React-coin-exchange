@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Td = styled.td` {
 border: 1px solid;
+background-color: #3a4d44;
 width: 25vh;
 color:white;
 }`;
@@ -15,20 +16,7 @@ export default class Coin extends Component {
         this.state = {price: this.props.price}
         this.handleClick = this.handleClick.bind(this);
     }
-    /*
-    componentDidMount(){
-        const callback = () =>{
-            // set the state to a new random value
-            const randomPercentage = 0.995 + Math.random() * 0.01
-            this.setState(function(oldState){
-                return{
-                    price: oldState.price * randomPercentage
-                };
-            });
-        }
-        setInterval (callback, 1000)
-    }
-    */
+
     handleClick(event){
         event.preventDefault();
         const randomPercentage = 0.995 + Math.random() * 0.01;
@@ -44,7 +32,7 @@ export default class Coin extends Component {
             <tr>
                 <Td>{this.props.name}</Td>
                 <Td>{this.props.ticker}</Td>
-                <Td>${this.state.price}</Td>
+                <Td>${this.state.price.toFixed(2)}</Td>
                 <Td><form action="#" method="POST"><button onClick={this.handleClick}>Refresh</button></form></Td>
             </tr>
         );
