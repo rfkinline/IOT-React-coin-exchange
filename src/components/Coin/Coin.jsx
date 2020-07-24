@@ -14,7 +14,7 @@ export default class Coin extends Component {
     
     handleClick = (event) => {
         event.preventDefault();
-        this.props.handleRefresh(this.props.ticker);
+        this.props.handleRefresh(this.props.tickerId);
     };
 
     render() {
@@ -22,7 +22,7 @@ export default class Coin extends Component {
             <tr>
                 <Td>{this.props.name}</Td>
                 <Td>{this.props.ticker}</Td>
-                <Td>${this.props.price.toFixed(2)}</Td>
+                <Td>${parseFloat(Number(this.props.price.toFixed(4)))}</Td>
                 {this.props.showBalance ? <Td>{this.props.balance}</Td> : null }
                 <Td><form action="#" method="POST"><button onClick={this.handleClick}>Refresh</button></form></Td>
             </tr>
