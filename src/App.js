@@ -4,8 +4,16 @@ import CoinList from './components/CoinList/CoinList';
 import ExchangeHeader from './components/ExchangeHeader/ExchangeHeader';
 import AccountBalance from './components/AccountBalance/AccountBalance';
 import axios from 'axios';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/js/all';
+
 // git add .
 // git commit -m "cleaning up"
+// git remote add origin https://github.com/rfkinline/coin-exchange.git
+// git push -u origin master
+// npm start
+
 const Div = styled.div`
   text-align: center;
   background-color: #553d74;
@@ -16,7 +24,7 @@ const COIN_COUNT = 10;
 
 function App(props) {
   const [balance, setBalance] = useState(10000);
-  const [showBalance, setShowBalance] = useState(true);
+  const [showBalance, setShowBalance] = useState(false);
   const [coinData, setCoinData] = useState([]);
 
 const componentDidMount = async () => {
@@ -46,9 +54,28 @@ const componentDidMount = async () => {
     }
   });
 
+  const handleBrrrr = () => {
+    setBalance (oldBalance => oldBalance +1200);
+  }
+
   const handleBalanceVisibiltyChange = () => {
     setShowBalance (oldValue => !oldValue)
   };
+
+  const handleTransaction =(isBuy, valueChangeId) => {
+    var balanceChange = isBuy ? 1 : -1;
+    const newCoinData = coinData.map( function(values){
+      let newValues = {...values};
+      if (valueChangeId === values.key) {
+        newValues.balance += balanceChange;
+        setBalance(oldBalance => oldBalance - balanceChange * newValues.price );
+      }
+      return newValues;
+    });
+    setCoinData(newCoinData);
+  }
+
+
 
   const handleRefresh = async (valueChangeId) => {
     const tickerUrl = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`;
@@ -74,10 +101,12 @@ const componentDidMount = async () => {
       <AccountBalance 
         amount={balance} 
         showBalance={showBalance} 
+        handleBrrrr={handleBrrrr}
         handleBalanceVisibiltyChange={handleBalanceVisibiltyChange}/>
       <CoinList 
         coinData={coinData} 
         showBalance={showBalance}
+        handleTransaction={handleTransaction}
         handleRefreh={handleRefresh}/>
     </Div>
   );
