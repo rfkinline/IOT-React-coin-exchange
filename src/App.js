@@ -14,6 +14,8 @@ import '@fortawesome/fontawesome-free/js/all';
 // git push -u origin master
 // npm start
 
+// Create new project: $ npx create-react-app coin-invest
+
 const Div = styled.div`
   text-align: center;
   background-color: #553d74;
