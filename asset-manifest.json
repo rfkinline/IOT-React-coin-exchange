@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rfkinline/IOT-React-coin-exchange/static/css/main.db1bca4b.chunk.css",
+    "main.js": "/rfkinline/IOT-React-coin-exchange/static/js/main.91c88743.chunk.js",
+    "main.js.map": "/rfkinline/IOT-React-coin-exchange/static/js/main.91c88743.chunk.js.map",
+    "runtime-main.js": "/rfkinline/IOT-React-coin-exchange/static/js/runtime-main.afcf7157.js",
+    "runtime-main.js.map": "/rfkinline/IOT-React-coin-exchange/static/js/runtime-main.afcf7157.js.map",
+    "static/css/2.0b53e794.chunk.css": "/rfkinline/IOT-React-coin-exchange/static/css/2.0b53e794.chunk.css",
+    "static/js/2.43741ee3.chunk.js": "/rfkinline/IOT-React-coin-exchange/static/js/2.43741ee3.chunk.js",
+    "static/js/2.43741ee3.chunk.js.map": "/rfkinline/IOT-React-coin-exchange/static/js/2.43741ee3.chunk.js.map",
+    "index.html": "/rfkinline/IOT-React-coin-exchange/index.html",
+    "precache-manifest.da3f5105916eb4c9a77611e192d045f2.js": "/rfkinline/IOT-React-coin-exchange/precache-manifest.da3f5105916eb4c9a77611e192d045f2.js",
+    "service-worker.js": "/rfkinline/IOT-React-coin-exchange/service-worker.js",
+    "static/css/2.0b53e794.chunk.css.map": "/rfkinline/IOT-React-coin-exchange/static/css/2.0b53e794.chunk.css.map",
+    "static/css/main.db1bca4b.chunk.css.map": "/rfkinline/IOT-React-coin-exchange/static/css/main.db1bca4b.chunk.css.map",
+    "static/js/2.43741ee3.chunk.js.LICENSE.txt": "/rfkinline/IOT-React-coin-exchange/static/js/2.43741ee3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.afcf7157.js",
+    "static/css/2.0b53e794.chunk.css",
+    "static/js/2.43741ee3.chunk.js",
+    "static/css/main.db1bca4b.chunk.css",
+    "static/js/main.91c88743.chunk.js"
+  ]
+}
